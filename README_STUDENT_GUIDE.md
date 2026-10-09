@@ -53,14 +53,51 @@ Students should have:
 - AWS CLI installed and configured
 - An AWS account with permission to use ECR and ECS
 
-Check your tools:
+### Install on Windows
+
+In PowerShell, install the Node.js LTS release (npm is included), Docker Desktop, and AWS CLI:
+
+```powershell
+winget install --id OpenJS.NodeJS.LTS --exact
+winget install --id Docker.DockerDesktop --exact
+winget install --id Amazon.AWSCLI --exact
+```
+
+If you use Chocolatey instead of `winget` to install Node.js, run:
+
+```powershell
+powershell -c "irm https://community.chocolatey.org/install.ps1|iex"
+choco install nodejs --version="24.21.0"
+```
+
+If prompted, allow the installers to make changes. After installation, open Docker Desktop from the Start menu and wait for it to finish starting. Open a new PowerShell window so the updated PATH is available.
+
+### Install on macOS
+
+Install [Homebrew](https://brew.sh/) first if it is not already installed. In Terminal, install Node.js (npm is included), Docker Desktop, and AWS CLI:
+
+```bash
+brew install node
+brew install --cask docker
+brew install awscli
+open -a Docker
+```
+
+Wait for Docker Desktop to finish starting before using Docker.
+
+### Verify the installations
+
+Run these commands in a new terminal:
 
 ```bash
 node -v
 npm -v
 docker --version
+docker info
 aws --version
 ```
+
+`docker info` should show the Docker Engine details. If it reports that it cannot connect to the Docker daemon, start Docker Desktop and try again.
 
 Make sure AWS credentials are configured:
 

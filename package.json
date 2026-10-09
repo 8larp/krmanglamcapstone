@@ -1,0 +1,14 @@
+{
+  "name": "simple-calculator",
+  "version": "1.0.0",
+  "description": "Demo web app running on Amazon ECS pulling images from ECR",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "buraku",
+  "license": "MIT-0",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
